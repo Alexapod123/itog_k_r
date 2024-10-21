@@ -1,27 +1,29 @@
 package nursery.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Register {
-    private List<Animals> animals;
+import static nursery.model.Numeration.*;
 
-    public Register(List<Animals> animals) {
+public class Service {
+    private final List<Animals> animals;
+
+    public Service() {
         animals = new ArrayList<>();
-        Numeration.setCount(animals.size());
+        setCount(animals.size());
     }
-    public void addAnimals(Animals animal){
+    public void addAnimal(Animals animal){
         animals.add(animal);
-        Numeration.nums();
+        nums();
     }
-    public List <String> getCommandList (String name){
+    public List<String> getCommandList (String name){
         for (Animals animal: animals){
             if (animal.getName().equalsIgnoreCase(name)) {
                 return animal.getCommands();
             }
-        }
-        return null;
+        } return Collections.singletonList(name);
     }
     public boolean addCommand (String name, String command){
         for (Animals animal: animals) {
@@ -33,7 +35,7 @@ public class Register {
         return false;
     }
     public List<Animals> getAnimalByBreed (String breed){
-        List<Animals> animalbybreed = new ArrayList<>(animals);
+        List<Animals> animalbybreed = new ArrayList<>();
         for (Animals animal: animals){
             if (animal.getBreed().equalsIgnoreCase(breed)){
                animalbybreed.add(animal);
@@ -41,15 +43,15 @@ public class Register {
         }
         return animalbybreed;
     }
-    public List<Animals> sortedByBirthday(){
-        List<Animals> sortedList = new ArrayList<>(animals);
-        sortedList.sort(Comparator.comparing(Animals::getBirthday));
-        return sortedList;
+    public List<Animals> sortedByBirthday(List <Animals>animals){
+        animals.sort(Comparator.comparing(Animals::getBirthday));
+        return animals;
     }
     public int getAmount(){
-        return Numeration.getCount();
+        return getCount();
     }
     public List<Animals> getAnimals(){
         return animals;
     }
+
 }

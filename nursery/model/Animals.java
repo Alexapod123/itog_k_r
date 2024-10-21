@@ -1,4 +1,4 @@
-package nursery;
+package nursery.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -41,4 +41,15 @@ public abstract class Animals {
         commands.add(command);
     }
     public abstract String getView();
+
+//    @Override
+//    public String toString() {
+//        return "Animals{" +
+//                "name='" + name + '\'' +
+//                ", breed='" + breed + '\'' +
+//                ", colour='" + colour + '\'' +
+//                ", birthday=" + birthday +
+//                ", commands=" + commands +
+//                '}';
+//    }
 }
