@@ -1,0 +1,62 @@
+1 Использование команды cat в Linux
+______________________________________________
+alexa@alexa-ubuntu24:~$ mkdir ItogKr
+alexa@alexa-ubuntu24:~$ cd ItogKr
+alexa@alexa-ubuntu24:~/ItogKr$ cat > Pets.txt
+Собака
+Кошка
+Хомяк
+alexa@alexa-ubuntu24:~/ItogKr$ cat > PackAnimals.txt
+Лошадь
+Верблюд
+Осел
+alexa@alexa-ubuntu24:~/ItogKr$ cat Pets.txt PackAnimals.txt > nursery.model.Animals.txt
+alexa@alexa-ubuntu24:~/ItogKr$ cat nursery.model.Animals.txt
+Собака
+Кошка
+Хомяк
+Лошадь
+Верблюд
+Осел
+________________________________________________________
+2 Работа с директориями в Linux
+____________________________________________________________
+
+alexa@alexa-ubuntu24:~/ItogKr$ mv nursery.model.Animals.txt HumanFriends.txt
+alexa@alexa-ubuntu24:~/ItogKr$ 
+alexa@alexa-ubuntu24:~/ItogKr$ ls
+HumanFriends.txt  PackAnimals.txt  Pets.txt
+alexa@alexa-ubuntu24:~/ItogKr$ ll
+итого 20
+drwxrwxr-x  2 alexa alexa 4096 окт 15 15:54 ./
+drwxr-x--- 24 alexa alexa 4096 окт 15 16:01 ../
+-rw-rw-r--  1 alexa alexa   72 окт 15 15:52 HumanFriends.txt
+-rw-rw-r--  1 alexa alexa   37 окт 15 15:47 PackAnimals.txt
+-rw-rw-r--  1 alexa alexa   35 окт 15 15:46 Pets.txt
+alexa@alexa-ubuntu24:~/ItogKr$ mv HumanFriends.txt ..
+alexa@alexa-ubuntu24:~/ItogKr$ ll
+итого 16
+drwxrwxr-x  2 alexa alexa 4096 окт 15 16:22 ./
+drwxr-x--- 24 alexa alexa 4096 окт 15 16:22 ../
+-rw-rw-r--  1 alexa alexa   37 окт 15 15:47 PackAnimals.txt
+-rw-rw-r--  1 alexa alexa   35 окт 15 15:46 Pets.txt
+alexa@alexa-ubuntu24:~/ItogKr$ cd ..
+alexa@alexa-ubuntu24:~$ mv HumanFriends.txt NewDirPets/
+alexa@alexa-ubuntu24:~$ cd NewDirPets/
+alexa@alexa-ubuntu24:~/NewDirPets$ ls
+HumanFriends.txt
+____________________________________________________________________
+3 Работа с MySQL в Linux. “Установить MySQL на вашу вычислительную
+машину ”
+______________________________________________________________
+alexa@alexa-ubuntu24:~/NewDirPets$ sudo apt-get update
+alexa@alexa-ubuntu24:~$ sudo apt-get install mysql-server
+alexa@alexa-ubuntu24:~$ mysql --version
+mysql  Ver 8.0.39-0ubuntu0.24.04.2 for Linux on x86_64 ((Ubuntu))
+___________________________________________________________________________________________
+4 Управление deb-пакетами
+____________________________________________________________________________________________
+alexa@alexa-ubuntu24:~$  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+alexa@alexa-ubuntu24:~$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+alexa@alexa-ubuntu24:~$ sudo dpkg -r google-chrome-stable 
+
